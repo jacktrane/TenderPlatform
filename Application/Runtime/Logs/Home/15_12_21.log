@@ -1,0 +1,6 @@
+[ 2015-12-21T10:40:55+08:00 ] ::1 /TenderPlatform/Home/bid
+ERR: 无法加载控制器:Bid
+
+[ 2015-12-21T10:41:17+08:00 ] ::1 /TenderPlatform/Home/user/bid
+ERR: 非法操作:bid
+

@@ -1,0 +1,77 @@
+*{margin:0;padding:0;border:0;}
+.current-pos{
+	margin:0 auto;
+	margin-top:30px;
+	width:998px;
+	height:45px;
+	background:url(../img/index/bg1.png) no-repeat;
+	border-left:1px solid #afc7d6;
+}
+.current-pos img{
+	display:inline-block;
+	margin-top:10px;
+	margin-left:20px;
+}
+.current-pos p{
+	display:inline-block;
+	position:relative;
+	bottom:8px;
+	font-family:"微软雅黑";
+	font-size:15px;
+	letter-spacing:2px;
+	color:#666;
+}
+.current-pos p .pos-tips{
+	color:#6797b5;
+}
+
+.content-report{
+	margin:0 auto;
+	margin-top:30px;
+	margin-bottom:65px;
+	width:998px;
+	min-height:580px;
+	border:1px solid #afc7d6;
+}
+.content-report .article-title{
+	margin-top:40px;
+	margin-bottom:20px;
+	width:998px;
+	text-align:center;
+}
+.content-report p{
+	margin:0 auto;
+	width:930px;
+	line-height:25px;
+	text-indent:2em;
+	font-family:"微软雅黑";
+	color:#666;
+}
+.content-report p.bid-company{
+	margin-right:30px;
+	margin-top:80px;
+	float:right;
+	width:auto;
+}
+.content-report p.bid-time{
+	margin-right:30px;
+	width:auto;
+	float:right;
+}
+
+.content-report .annex{
+	margin:0 auto;
+	width:998px;
+	cursor:pointer;
+}
+.content-report .register-button{
+	margin:0 auto;
+	margin-top:100px;
+	margin-bottom:20px;
+	width:301px;
+	height:44px;
+	cursor:pointer;
+}
+.clear{
+	clear:both;
+}

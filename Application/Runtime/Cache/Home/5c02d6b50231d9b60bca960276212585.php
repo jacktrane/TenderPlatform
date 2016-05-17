@@ -1,0 +1,325 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>注册</title>
+    <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="/TenderPlatform/Public/css/signIn.css"/>
+    <link rel="stylesheet" type="text/css" href="/TenderPlatform/Public/css/head-same.css"/>
+
+    <!--<link href="/TenderPlatform/Public/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="/TenderPlatform/Public/css/AdminLTE.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link rel="stylesheet" href="/TenderPlatform/Public/plugins/uploadify/uploadify.css" />-->
+
+    <script src="/TenderPlatform/Public/js/html5shiv.min.js"></script>
+    <script src="/TenderPlatform/Public/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="/TenderPlatform/Public/js/jquery.min.js"></script>
+    <script src="/TenderPlatform/Public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/TenderPlatform/Public/js/common.js"></script>
+    <script src="/TenderPlatform/Public/plugins/plugins/plugins.js"></script>
+    <!--<script src="/TenderPlatform/Public/plugins/formValidator/formValidator-4.1.3.js"></script>-->
+    <!--<script src="/TenderPlatform/Public/plugins/uploadify/jquery.uploadify.min.js"></script>-->
+</head>
+
+
+<body>
+<div class="head">
+    <div class="nav-head">
+        <div class="logo-img">
+            <a href="/TenderPlatform/index.php/Home/Index/index"><img src="/TenderPlatform/Public/img/index/logo.png" alt="logo"/></a>
+        </div>
+        <div class="search-area">
+            <input type="text" id="keyword"/>
+            <a><img onclick="search()" src="/TenderPlatform/Public/img/index/search-button.png" alt="search-logo"></a>
+        </div>
+        <div class="login-area">
+
+            <!--登录之后显示用户名-->
+            <?php if($_SESSION['username']) { ?>
+            <a class="admin-name" href="/TenderPlatform/index.php/Home/User/toMyProfile">欢迎你,<?php echo (session('username')); ?></a>
+            <?php } else { ?>
+            <a href="/TenderPlatform/index.php/Home/User/toLogin"><img src="/TenderPlatform/Public/img/index/login-button.png"></a>
+            <a href="/TenderPlatform/index.php/Home/User/toRegister"><img src="/TenderPlatform/Public/img/index/sign-button.png"></a>
+            <?php } ?>
+        </div>
+
+    </div>
+</div>
+
+<form method="post" action="/TenderPlatform/index.php/Home/User/register" enctype="multipart/form-data">
+<div class="sign-details">
+    <input type="text" id="errorMsg" value="<?php echo ($msg); ?>"/>
+    <div class="current-pos">
+        <p>用户注册</p>
+    </div>
+    <div class="sign-category four-words">
+        <span class="sign-category-text">注册类型:</span>
+        <div class="choose-box">
+            <input type="text" name="registerType" hidden="true" id="registerType" >
+            <p class="registerType">--请选择--</p>
+
+            <a id="triangle">
+                <img  src="/TenderPlatform/Public/img/sign/triangle.png">
+            </a>
+        </div>
+
+        <div class="category-list">
+            <ul>
+                <li>供应商</li>
+                <li>开发商</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sign-details-input two-words">
+        <span class="cat-title">姓名:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="username" name="username">
+        <p>请输入你的姓名</p>
+    </div>
+    <div class="sign-details-input four-words">
+        <span class="cat-title">企业名称:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="company" name="company">
+        <p>请输入您所在企业营业执照上的企业名称</p>
+    </div>
+
+    <div class="sign-details-input four-words">
+        <span class="cat-title">主营业务:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="business" name="business">
+        <p>请选择你公司的主营业务</p>
+
+    </div>
+
+    <div class="sign-details-input four-words">
+        <span class="cat-title">手机号码:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="telephone" name="telephone">
+        <p>请输入你的手机号码</p>
+
+    </div>
+
+    <div class="sign-details-input four-words">
+        <span class="cat-title">电子邮箱:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="email" name="email">
+        <p>请输入你的电子邮箱</p>
+
+    </div>
+
+    <div class="sign-details-input two-words">
+        <span class="cat-title">密码:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="password" name="password">
+        <p>6-12个字符，建议使用字母和数字的组合</p>
+
+    </div>
+
+    <div class="sign-details-input four-words">
+        <span class="cat-title">确认密码:</span>
+        <div class="text-bg"></div>
+        <input type="text" id="confirmPassword" name="confirmPassword">
+        <p>再次输入密码</p>
+
+    </div>
+
+    <div class="sign-details-onload four-words">
+        上传资料:
+        <div class="text-bg"></div>
+        <p>请上传企业法人营业执照jpg格式</p>
+        <a class="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files"><img src="/TenderPlatform/Public/img/sign/choose-files.png"></a>
+        <input class="file-start" id="img1" name="img1" type="file" style="display:none;">
+    </div>
+
+    <div class="sign-details-onload no-words">
+        <div class="text-bg"></div>
+        <p>请上传组织结构代码证jpg格式</p>
+
+
+        <a class="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files"><img src="/TenderPlatform/Public/img/sign/choose-files.png"></a>
+        <input class="file-start" type="file" name="img2" id="img2" style="display:none;">
+    </div>
+    <div class="sign-details-onload no-words">
+        <div class="text-bg"></div>
+        <p>请上传税务登记证jpg格式</p>
+        <a class="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files"><img src="/TenderPlatform/Public/img/sign/choose-files.png"></a>
+        <input class="file-start" type="file" name="img3" id="img3" style="display:none;">
+    </div>
+    <div class="sign-details-onload no-words">
+        <div class="text-bg"></div>
+        <p>请上传法定代表人身份证jpg格式</p>
+
+        <a class="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files"><img src="/TenderPlatform/Public/img/sign/choose-files.png"></a>
+        <input class="file-start" type="file" name="img4" id="img4" style="display:none;">
+    </div>
+    <div class="sign-details-onload no-words">
+        <div class="text-bg"></div>
+        <p>请上传被授权人身份证jpg格式</p>
+        <a class="onload-files" id="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files" ><img src="/TenderPlatform/Public/img/sign/choose-files.png" id="choose-files"></a>
+        <input class="file-start" type="file" name="img5" id="img5" style="display:none;">
+    </div>
+
+    <div class="sign-details-onload no-words">
+        <div class="text-bg"></div>
+        <p>请上传公司授权书jpg格式</p>
+        <a class="onload-files"><img src="/TenderPlatform/Public/img/sign/onload-files.png"></a>
+        <a class="choose-files"><img src="/TenderPlatform/Public/img/sign/choose-files.png"></a>
+        <input class="file-start" id="img6" name="img6" type="file" style="display:none;">
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="agree-terms">
+        <a></a>
+        <p>已阅读并同意注册条款</p>
+        <input type="checkbox" hidden="true" checked="checked" id="agreeBox"/>
+    </div>
+
+    <div>
+        <input class="sign-button" type="submit" value="" />
+    </div>
+</div>
+</form>
+
+<div class="footer">
+    <p>&copy;2015招投标&nbsp;服务平台&nbsp;版权所有&nbsp;复制必究&nbsp;粤ICP备 172625111号</p>
+</div>
+<script>
+    $(function(){
+        var errorMsg = $("#errorMsg").val();
+        $("#errorMsg").val("");
+        if(errorMsg != "") {
+            alert(errorMsg);
+        }
+
+        var angelClick_time=0;
+        //倒三角单击事件
+        $("#triangle").click(function(){
+
+            if(angelClick_time%2==0){
+                $(".category-list").slideDown(100);
+                angelClick_time++;
+            }else{
+                $(".category-list").css("display","none");
+                angelClick_time++;
+            }
+        });
+
+
+        //选择类型下拉框
+        $(".category-list").each(function(){
+            $(this).find($("li")).click(function(){
+                $(".category-list").css("display","none");
+                $(".choose-box").find($("p")).html($(this).html());
+                $("#registerType").val($(this).html());
+            });
+        });
+
+        $(".sign-details-input input").each(function(){
+            var defaultVal=$(this).next().html();
+            if($(this).val()!="") {
+                $(this).next().html("");
+            }
+            $(this).focus(function(){
+                $(this).next().html("");
+            });
+            $(this).blur(function(){
+                if($(this).val()==""){
+                    $(this).next().html(defaultVal);
+                }
+
+            });
+        });
+
+        //上传文件
+        $(".choose-files").each(function(){
+            $(this).click(function(){
+                $(this).parent().find($(".file-start")).click();
+            });
+        });
+
+        $(".file-start").each(function(){
+            $(this).change(function(){
+                var val=$(this).val();
+                $(this).parent().find($("p")).html(val);
+            });
+        });
+
+    });
+
+    function search() {
+        var q = [];
+        q.push('keyword='+$('#keyword').val());
+        location.href = '/TenderPlatform/index.php/Home/Index/index?'+q.join('&');
+    }
+
+    function register() {
+        return false;
+        var params = {};
+        var registerType = $('#registerType').text();
+        if(registerType = "供应商") {
+            registerType = 2;
+        } else if(registerType = "开发商") {
+            registerType = 1;
+        } else {
+            registerType = 3;
+        }
+        var username = $('#username').val();
+        var company = $('#company').val();
+        var business = $('#business').val();
+        var telephone = $('#telephone').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var confirmPassword = $('#confirmPassword').val();
+        var img1 = $('#img1').text();
+        var img2 = $('#img2').text();
+        var img3 = $('#img3').text();
+        var img4 = $('#img4').text();
+        var img5 = $('#img5').text();
+        var img6 = $('#img6').text();
+
+        if(!$('#agreeBox').is(":checked")) {
+//            alert("username");
+        }
+
+        params.registerType = registerType;
+        params.username = username;
+        params.company = company;
+        params.business = business;
+        params.telephone = telephone;
+        params.email = email;
+        params.password = password;
+        params.confirmPassword = confirmPassword;
+        params.img1 = img1;//地区
+        params.img2 = img2;
+        params.img3 = img3;
+        params.img4 = img4;//地区
+        params.img5 = img5;
+        params.img6 = img6;
+
+        $.post("/TenderPlatform/index.php/Home/User/register", params, function (data, textStatus) {
+            var json = {};
+            if(typeof(data )=="object"){
+                json = data;
+            }else{
+                json = eval("("+data+")");
+            }
+            if (json.code == '200' && json.isSuccess) {
+                alert(json.msg);
+                location.href = '/TenderPlatform/index.php/Home/Index/index';
+            } else {
+                alert(json.msg);
+            }
+        });
+    }
+</script>
+</body>
+</html>

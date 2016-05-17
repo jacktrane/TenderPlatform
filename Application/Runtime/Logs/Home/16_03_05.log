@@ -1,0 +1,16 @@
+[ 2016-03-05T18:17:03+08:00 ] ::1 /TenderPlatform/index.php/Home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002255s ]
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.1881s ]
+SQL: SELECT * FROM `tp_user` WHERE `username` = 'dsgd' AND `password` = 'sgsd' LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2016-03-05T18:17:10+08:00 ] ::1 /TenderPlatform/index.php/Home/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001161s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001954s ]
+
+[ 2016-03-05T18:44:00+08:00 ] ::1 /TenderPlatform/index.php/Home/Index/bid
+ERR: 1146:Table 'tenderplatform.tp_province' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tp_province`
+

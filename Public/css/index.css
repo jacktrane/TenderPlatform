@@ -1,0 +1,191 @@
+*{margin:0;padding:0;border:0;}
+
+.bid-content{
+	width:1020px;
+	height:800px;
+	margin:0 auto;
+	margin-top:30px;
+}
+.bid-content .current-pos{
+	margin:0 auto;
+	width:998px;
+	height:45px;
+	background:url(../img/index/bg1.png) no-repeat;
+	border-left:1px solid #afc7d6;
+}
+.bid-content .current-pos img{
+	display:inline-block;
+	margin-top:10px;
+	margin-left:20px;
+}
+.bid-content .current-pos p{
+	display:inline-block;
+	position:relative;
+	bottom:8px;
+	font-family:"微软雅黑";
+	font-size:15px;
+	letter-spacing:2px;
+	color:#666;
+}
+.bid-content .current-pos p .pos-tips{
+	color:#6797b5;
+}
+
+.bid-content .bid-category{
+	margin-top:20px;
+	margin-left:10px;
+	float:left;
+	width:222px;
+	height:725px;
+	border:1px solid #afc7d6;
+	border-left:2px solid #afc7d6;
+}
+.bid-content .bid-category .bid-category-bg{
+	width:219px;
+	height:44px;
+	background:url("../img/index/bg2.png") no-repeat;
+	color:#6797b5;
+}
+.bid-category-bg p{
+	margin-left:17px;
+} 
+.bid-category-bg p img{
+	position:relative;
+	top:10px;
+}
+.bid-category-bg p span{
+	position:relative;
+	margin-left:5px;
+	top:5px;
+}
+
+.bid-content .big-categoty-list li{
+	margin:0 auto;
+	position:relative;
+	padding-left:5px;
+	width:195px;
+	height:51px;
+	line-height:51px;
+	list-style:none;
+	border-bottom:1px solid #e5e5e5;
+	font-family:"微软雅黑";
+	font-size:15px;
+	color:#666;
+
+}
+.bid-content .big-categoty-list li:hover{
+	background:#6797b5;
+	color:#fff;
+	cursor:pointer;
+}
+.bid-content .big-categoty-list span.space-interval{
+	position:absolute;
+	right:20px;
+}
+
+.bid-content .bid-category-right{
+	margin-top:20px;
+	margin-right:13px;
+	width:760px;
+	height:725px;
+	border:1px solid #afc7d6;
+	float:right;
+}
+
+.bid-content .bid-category-right li{
+	float:left;
+	margin-right:1px;
+	height:44px;
+	line-height:44px;
+	list-style:none;
+	text-align:center;
+	
+	font-family:"微软雅黑";
+}
+.bid-content .bid-category-right li img{
+	position:relative;
+	top:8px;
+}
+.bid-category-right .bid-category-title{
+	height:44px;
+	width:760px;
+	background:url(../img/index/bg3.png) no-repeat;
+	font-size:15px;
+	color:#6797b5;
+}
+.bid-category-right li.cat1{
+	width:50px;
+} 
+.bid-category-right li.cat2{
+	width:330px;
+} 
+.bid-category-right li.cat3{
+	width:135px;
+} 
+.bid-category-right li.cat4{
+	width:95px;
+} 
+.bid-category-right .bid-category-content li{
+	margin-right:3px;
+	font-size:13px;
+	color:#000;
+	border-bottom:1px dashed #ccc;
+}
+
+.bid-category-right .bid-content-page{
+	width:550px;
+	margin:0 auto;
+	margin-top:30px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	cursor:pointer;
+}
+.bid-category-right .bid-content-page li.page-count{
+	cursor:auto;
+}
+.bid-category-right .bid-content-page li.page-count p{
+	position:relative;
+	bottom:5px;
+}
+.bid-category-right .bid-content-page li.pre,.bid-content-page li.next{
+	margin-right:20px;
+	width:100px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	border:1px solid #ccc;
+}
+.bid-content-page li.next{
+	margin-right:60px;
+}
+
+.bid-content-page li.pre:hover,.bid-content-page li.next:hover{
+	border-color:#6797b5;
+}
+.bid-category-right .bid-content-page li.page-num{
+	margin-right:20px;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	border:1px solid #ccc;
+}
+li.page-num:hover{
+	background:#6797b5;
+	color:#fff;
+}
+
+.footer{
+	margin:0 auto;
+	width:1349px;
+	height:65px;
+	line-height:65px;
+	background:#6797b5;
+	text-align:center;
+	font-family:"微软雅黑";
+	color:#fff;
+	border-bottom:7px solid #447593;
+}
+.clear{
+	clear:both;
+}

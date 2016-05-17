@@ -1,0 +1,12 @@
+[ 2015-12-26T21:51:42+08:00 ] ::1 /TenderPlatform/index.php/Home/Index/toBidDetail?id=27
+ERR: 1054:Unknown column 'userid' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `tp_user_detail` WHERE ( userid = 'wu' ) LIMIT 1  
+
+[ 2015-12-26T21:51:58+08:00 ] ::1 /TenderPlatform/index.php/Home/Index/toBidDetail?id=27
+ERR: 1054:Unknown column 'userid' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `tp_user_detail` WHERE ( userid = 'wu' ) LIMIT 1  
+
+[ 2015-12-26T21:52:07+08:00 ] ::1 /TenderPlatform/index.php/Home/Index/toBidDetail?id=27
+ERR: 1054:Unknown column 'userid' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `tp_user_detail` WHERE ( userid = 'wu' ) LIMIT 1  
+

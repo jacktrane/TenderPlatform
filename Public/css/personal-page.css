@@ -1,0 +1,121 @@
+*{margin:0;padding:0;border:0;}
+.current-pos{
+	margin:0 auto;
+	margin-top:30px;
+	width:998px;
+	height:45px;
+	background:url(../img/index/bg1.png) no-repeat;
+	border-left:1px solid #afc7d6;
+}
+.current-pos img{
+	display:inline-block;
+	margin-top:10px;
+	margin-left:20px;
+}
+.current-pos p{
+	display:inline-block;
+	position:relative;
+	bottom:8px;
+	font-family:"微软雅黑";
+	font-size:15px;
+	letter-spacing:2px;
+	color:#666;
+}
+.current-pos p .pos-tips{
+	color:#6797b5;
+}
+
+.personal-details{
+	margin:0 auto;
+	margin-top:20px;
+	margin-bottom:50px;
+	width:995px;
+	height:600px;
+	border:1px solid #afc7d6;;
+	font-family:"微软雅黑";
+}
+.personal-details .pos-title{
+	margin:0 auto;
+	margin-bottom:30px;
+	width:995px;
+	height:44px;
+	background:url(../img/personal-page/bg1.png) no-repeat;
+}
+
+.personal-details .pos-title p{
+	position:relative;
+	top:12px;
+	margin-left:20px;
+	font-family:"微软雅黑";
+	font-size:15px;
+	color:#666;
+}
+
+.personal-details .pos-title-tender{
+    margin:0 auto;
+    width:995px;
+    height:44px;
+    background:url(../img/personal-page/bg1.png) no-repeat;
+}
+
+.personal-details .pos-title-tender p{
+    position:relative;
+    top:12px;
+    margin-left:20px;
+    font-family:"微软雅黑";
+    font-size:15px;
+    color:#666;
+}
+
+.personal-details .show-details{
+	margin-top:50px;
+	margin-left:60px;
+	width:400px;
+}
+.personal-details .show-details li{
+	height:26px;
+	line-height:26px;
+	list-style:none;
+	font-family:"微软雅黑";
+	color:#333;
+}
+
+
+.personal-details a.push-bid{
+	display:inline-block;
+	margin-left:65px;
+	margin-top:50px;
+	width:299px;
+	height:40px;
+	cursor:pointer;
+}
+
+.clear{
+	clear:both;
+}
+
+table.imagetable {
+    width:995px;
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.imagetable th {
+    background:url(../img/index/bg3.png) no-repeat;
+    font-size:15px;
+    color:#6797b5;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}
+table.imagetable td {
+    background:#fff;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}

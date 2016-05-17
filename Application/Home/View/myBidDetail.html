@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>内容详情</title>
+	<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=1"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/head-same.css"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/content-detail.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/personal-page.css"/>
+
+    <!--<link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="__PUBLIC__/css/AdminLTE.css" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" href="__PUBLIC__/plugins/uploadify/uploadify.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+    <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>
+    <script src="__PUBLIC__/plugins/formValidator/formValidator-4.1.3.js"></script>
+    <script src="__PUBLIC__/plugins/uploadify/jquery.uploadify.min.js"></script>
+</head>
+<script>
+
+    function search() {
+        var q = [];
+        q.push('keyword='+$('#keyword').val());
+        location.href = '__ROOT__/index.php/Home/Index/index?'+q.join('&');
+    }
+
+    function submit() {
+        var params = {};
+        var tenderId = $('#tenderId').val();
+        params.tenderId = tenderId;
+
+        $.post("__ROOT__/index.php/Home/Index/submit", params, function (data, textStatus) {
+            var json = {};
+            if(typeof(data )=="object"){
+                json = data;
+            }else{
+                json = eval("("+data+")");
+            }
+            if (json.code == '200' && json.isSuccess) {
+                alert(json.msg);
+            } else {
+                alert(json.msg);
+            }
+        });
+    }
+</script>
+<body>
+	<div class="head">
+		<div class="nav-head">
+            <div class="logo-img">
+                <a href="__ROOT__/index.php/Home/Index/index"><img src="__PUBLIC__/img/index/logo.png" alt="logo"/></a>
+            </div>
+            <div class="search-area">
+                <input type="text" id="keyword"/>
+                <a><img onclick="search()" src="__PUBLIC__/img/index/search-button.png" alt="search-logo"></a>
+            </div>
+			<div class="login-area">
+
+                <!--登录之后显示用户名-->
+                <php>if($_SESSION['username']) {</php>
+                <a class="admin-name" href="__ROOT__/index.php/Home/User/toMyProfile">欢迎你,{$Think.session.username}</a>
+                <php>} else {</php>
+                <a href="__ROOT__/index.php/Home/User/toLogin"><img src="__PUBLIC__/img/index/login-button.png"></a>
+                <a href="__ROOT__/index.php/Home/User/toRegister"><img src="__PUBLIC__/img/index/sign-button.png"></a>
+                <php>}</php>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="current-pos">
+		<img src="__PUBLIC__/img/index/pos.png" alt="定位logo"/>
+		<p><span class="pos-tips">当前位置:</span>首页&gt;设计</p>
+	</div>
+
+	<div class="content-report">
+        <input hidden="true" id="tenderId" type="text" value="{$detail['id']}"/>
+		<div class="article-title">
+			<h4>{$detail["projectname"]}</h4>
+		</div>
+		<p>招标区域：{$detail["province"]} {$detail["city"]}</p>
+		<p>报名人数：{$detail["numbers"]} 人</p>
+		<p>截止时间：{$detail["enddate"]}</p>
+
+		<p class="bid-company">{$userDetail["company"]}</p>
+		<div class="clear"></div>
+		<p class="bid-time">{$detail["createtime"]}</p>
+		<div class="clear"></div>
+		
+		 <!--动态添加的文件在后面每一条加在p便签里面-->
+		<div class="annex">
+			<p>附件:</p>
+            <volist name="files" id="vo" key='i' empty="没有数据">
+                <p><a href="http://localhost/TenderPlatform/{$vo['savepath']}{$vo['savename']}">{$vo['name']}</a></p>
+            </volist>
+		</div>
+	</div>
+
+    <div class="personal-details">
+        <div class="pos-title-tender">
+            <p>报名用户</p>
+        </div>
+        <table class="imagetable">
+            <tr>
+                <th>序号</th>
+                <th>公司</th>
+                <th>电话</th>
+                <th>邮件</th>
+                <th>操作</th>
+                <th>详情</th>
+            </tr>
+            <volist name="users" id="vo" key='i' empty="没有数据">
+                <tr onclick="javascript:toDetail({$vo['id']})">
+                    <td >{$i}</td>
+                    <td >{$vo['company']}</td>
+                    <td >{$vo['telephone']}</td>
+                    <td >{$vo['email']}</td>
+                    <td ><a target="_Blank" href="https://mail.qq.com/cgi-bin/loginpage">发送标书</a></td>
+                    <td ><a href="__ROOT__/index.php/Home/User/toProfile?id= + {$vo['userid']}">详情</a></td>
+                    <div class="clear"></div>
+                </tr>
+            </volist>
+
+            <div class="bid-content-page">
+                <ul>
+                    <td colspan='11' align='center'>{$page}</td>
+                    <div class="clear"></div>
+                </ul>
+
+            </div>
+        </table>
+    </div>
+
+	<div class="footer">
+		<p>&copy;2015招投标&nbsp;服务平台&nbsp;版权所有&nbsp;复制必究&nbsp;粤ICP备 172625111号</p>
+	</div>
+</body>
+</html>
